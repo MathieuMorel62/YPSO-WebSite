@@ -337,6 +337,9 @@ nav ul li a {
     padding-top: 240px;
     font-size: 20vw;
   }
+  .scroll-arrow-home {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -519,40 +522,46 @@ nav ul li a {
     display: block;
     width: 100%;
   }
+  .counters {
+    border-bottom: 0.2em solid var(--color-primary);
+  }
   .counter-number-left,
   .counter-number-right {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .counter-label-left,
   .counter-label-right {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    white-space: nowrap;
     margin-top: 0.25rem;
   }
   .column .typing-effect {
     display: flex;
     justify-content: center;
-    padding-top: 1.56rem;
-    margin: 1.25rem 0 1.25rem 0;
+    margin: 1rem 0 1rem 0;
     letter-spacing: 0;
   }
   .column .typing-effect span {
-    margin: 0.31rem;
-    font-size: 3rem;
+    margin: 0.1rem;
+    font-size: 2rem;
   }
   .column .typing-effect-2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
   }
   .column.right-column p {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin-right: 0.62rem;
-    margin-top: 3.1rem;
+    margin-top: 2.5rem;
     font-weight: 500;
   }
   .logo-junior {
     width: 100%;
     opacity: 0.05;
+  }
+  .scroll-arrow-junior {
+    display: none;
   }
 }
 
@@ -563,37 +572,43 @@ nav ul li a {
   }
   .counter-number-left,
   .counter-number-right {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .counter-label-left,
   .counter-label-right {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .counters {
+    border-bottom: 0.2em solid var(--color-primary);
   }
   .column .typing-effect {
     display: flex;
     justify-content: center;
-    padding-top: 1.56rem;
+    padding-top: 0.2rem;
     margin: 1.25rem 0 1.25rem 0;
     letter-spacing: 0;
   }
   .column .typing-effect span {
     margin: 0.31rem;
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .column .typing-effect-2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
   }
   .column.right-column p {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-right: 0.62rem;
-    margin-top: 3.1rem;
+    margin-top: 4.1rem;
     font-weight: 500;
   }
   .logo-junior {
-    width: 60%;
-    opacity: 0.05;
+    width: 70%;
+    opacity: 0.03;
+  }
+  .scroll-arrow-junior {
+    bottom: 4.5rem;
   }
 }
 
