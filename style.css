@@ -1242,16 +1242,18 @@ nav ul li a {
   cursor: pointer;
   padding: 1vw 2vw;
   background-color: #ffffff;
+  box-shadow: 0 0 15px var(--color-third);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .item-partner2 {
   box-shadow: 0 0 15px var(--color-third);
+  
 }
 
 .item-partner:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px var(--color-primary);
+  box-shadow: 0 0 20px var(--color-third);
   background-color: #ffffff;
 }
 
