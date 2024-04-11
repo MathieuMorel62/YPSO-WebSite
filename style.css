@@ -1112,6 +1112,9 @@ nav ul li a {
   .social-icons i {
     font-size: 2rem;
   }
+  .scroll-arrow-team {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
