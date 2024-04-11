@@ -151,7 +151,7 @@ nav ul li a {
     align-items: center;
     margin: 0;
     padding: 0.825em 0;
-    font-size: 0.7875em;
+    font-size: 0.4em;
   }
   nav ul li {
     margin: 0.3125em;
@@ -202,7 +202,6 @@ nav ul li a {
   /*   padding-left: 20px; */
   overflow: hidden;
   text-align: center;
-  
 }
 
 .slider div {
@@ -221,6 +220,7 @@ nav ul li a {
 
 .slider-text1 {
   color: lightgreen;
+  white-space: nowrap;
   animation: slide 6s linear infinite;
 }
 
@@ -315,6 +315,9 @@ nav ul li a {
 }
 
 @media only screen and (max-width: 767px) {
+  .slider {
+    margin-top: -60px;
+  }
   .slider-wrapper {
     font-size: 50px;
   }
@@ -331,12 +334,15 @@ nav ul li a {
   }
   #home .title-home {
     margin-left: 10px;
-    padding-top: 440px;
+    padding-top: 240px;
     font-size: 20vw;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .slider {
+    margin-top: -60px;
+  }
   .slider-wrapper {
     font-size: 50px;
   }
