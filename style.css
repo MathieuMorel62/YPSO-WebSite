@@ -1343,19 +1343,18 @@ nav ul li a {
 
 /* ----------Responsive Parternaire titles----- */
 @media (max-width: 768px) {
-  section#partenaire h2 {
+  #partenaire h2 {
+    font-size: 2rem;
     margin-top: 1.9rem;
-    font-size: 2.5rem;
+    margin-bottom: 60px;
   }
-
-  section#partenaire h3 {
+  #partenaire h3 {
     font-size: 1.5rem;
-    margin-bottom: 130px;
+    margin-bottom: 10px;
   }
-
   .item-partner {
     margin-top: 1.5rem;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     width: 40%;
     height: 40vw;
   }
@@ -1363,29 +1362,38 @@ nav ul li a {
     transform: none;
   }
   p.quote {
-    font-size: 1.5rem;
-    padding: 6.25rem 0.94rem;
+    font-size: 1.3rem;
+    padding: 1rem;
   }
   .quote::before {
     content: "“";
-    bottom: -20%;
+    bottom: -35%;
     left: 0.31rem;
-    font-size: 19rem;
+    font-size: 11rem;
   }
   .quote::after {
     content: "”";
     right: 0.25rem;
-    top: 15%;
-    font-size: 19rem;
+    top: 11%;
+    font-size: 11rem;
+  }
+  .scroll-arrow-part {
+    display: none;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 1023px){
-  section#partenaire h2 {
+  #partenaire h2 {
+    font-size: 2.5rem;
     margin-top: 1.9rem;
+    margin-bottom: 70px;
+  }
+  #partenaire h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
   .item-partner {
     margin-top: 1.5rem;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     width: 30%;
     height: 30vw;
   }
@@ -1398,7 +1406,7 @@ nav ul li a {
   }
   .quote::before {
     content: "“";
-    bottom: -30%;
+    bottom: -25%;
     left: 0.31rem;
     font-size: 19rem;
   }
@@ -1407,6 +1415,9 @@ nav ul li a {
     right: 0.25rem;
     top: 15%;
     font-size: 19rem;
+  }
+  .scroll-arrow-part {
+    bottom: 4.5rem;
   }
 }
 /***************************************************************************************
