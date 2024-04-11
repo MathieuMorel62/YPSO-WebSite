@@ -598,7 +598,11 @@
         <h2>Parlons-en !</h2>
 
         <!-- Form that sends an email with contact details -->
-        <form action="http://localhost:3000/api/contact/create" method="POST">
+        <form name="contactForm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <!-- Hidden field for spam protection (honeypot) -->
+          <input type="hidden" name="bot-field" />
+          <!-- Hidden field to identify the form -->
+          <input type="hidden" name="form-name" value="contactForm" />
           <!-- Hidden field to store the user's project choice -->
           <input type="hidden" id="userChoice" required name="userChoice" />
 
