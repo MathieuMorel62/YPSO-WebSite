@@ -1438,62 +1438,7 @@ nav ul li a {
   overflow: hidden;
 }
 
-/* ----------Responsive Portfolio titles----- */
-/* tablet */
-@media (max-width: 768px){
-  section#portfolio .portfolio-title {
-    transform: none;
-    text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 2.5rem;
-  }
 
-  section#portfolio .portfolio-subtitle {
-    width: 100%;
-    transform: none;
-    font-size: 1rem;
-    line-height: 2rem;
-    box-sizing: border-box;
-  }
-
-  section#portfolio .portfolio-subtitle p {
-    margin-top: 10px;
-  }
-
-  .portfolio-slider .portfolio-item {
-    width: 150px;
-    height: 150px;
-    left: calc(130% - 370px);
-    margin-top: 50px;
-  }
-
-  button#portfolio-prev {
-    left: 10px;
-    top: 40%;
-  }
-  button#portfolio-next {
-    right: 10px;
-    top: 40%;
-  }
-  .portfolio-item-text {
-    display: none;
-}
-.portfolio-slider .portfolio-item {
-  width: 200px;
-  height: 200px;
-  left: calc(90% - 370px);
-  margin-top: 10px;
-}
-
-}
-/* Mobile */
-@media (max-width: 400px) {
-  .portfolio-slider .portfolio-item {
-    width: 150px;
-    height: 150px;
-    left: calc(130% - 370px);
-    margin-top: 50px;
-  }
-}
 
 /* Title and Subtitle */
 .portfolio-title {
@@ -1710,6 +1655,63 @@ nav ul li a {
   color: var(--color-arrow);
 }
 
+/* ----------Responsive Portfolio titles----- */
+/* Mobile */
+@media (max-width: 768px){
+  #portfolio .portfolio-title {
+    transform: none;
+    font-size: 2rem;
+  }
+
+  #portfolio .portfolio-subtitle {
+    width: 100%;
+    transform: none;
+    font-size: 1rem;
+    line-height: 2rem;
+    box-sizing: border-box;
+  }
+
+  #portfolio .portfolio-subtitle p {
+    margin-top: 10px;
+  }
+
+  .portfolio-slider .portfolio-item {
+    width: 150px;
+    height: 150px;
+    left: calc(130% - 370px);
+    margin-top: 50px;
+  }
+
+  button#portfolio-prev {
+    left: 10%;
+    top: 50%;
+  }
+  button#portfolio-next {
+    right: 10%;
+    top: 50%;
+  }
+  .portfolio-item-text {
+    display: none;
+  }
+  .portfolio-slider .portfolio-item {
+    width: 200px;
+    height: 200px;
+    left: calc(80% - 230px);
+    margin-top: 10px;
+  }
+  .scroll-arrow-portfolio {
+    display: none;
+  }
+}
+/* Mobile
+@media (max-width: 400px) {
+  .portfolio-slider .portfolio-item {
+    width: 150px;
+    height: 150px;
+    left: calc(130% - 370px);
+    margin-top: 50px;
+  }
+}*/
 
 /***************************************************************************************
 ***********************************  CONTACT SECTION  **********************************
