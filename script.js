@@ -128,73 +128,71 @@ closeButton.addEventListener("click", function () {
 ******************************  PORTFOLIO: SLIDER ********************************
 ***************************************************************************************/
 
-// Cet Event Listener attend que le document HTML soit entièrement chargé et analysé avant d'exécuter son contenu.
 document.addEventListener("DOMContentLoaded", function () {
-// Sélection de tous les éléments ayant la classe "portfolio-item" à l'intérieur d'un élément avec la classe "portfolio-slider".
-let items = document.querySelectorAll(".portfolio-slider .portfolio-item");
+  let items = document.querySelectorAll(".portfolio-slider .portfolio-item");
+  let next = document.getElementById("portfolio-next");
+  let prev = document.getElementById("portfolio-prev");
+  let active = items.length % 2 !== 0 ? (items.length - 1) / 2 : items.length / 2;
+  let isMobile = window.innerWidth <= 768;
 
-// Obtention des références aux boutons "suivant" et "précédent" par leurs identifiants respectifs.
-let next = document.getElementById("portfolio-next");
-let prev = document.getElementById("portfolio-prev");
-
-// Calcul de l'index de l'élément actif initialement en fonction du nombre total d'éléments, pair ou impair.
-let active =
-  items.length % 2 !== 0 ? (items.length - 1) / 2 : items.length / 2;
-
-// Fonction pour définir l'état visuel initial des éléments du portfolio.
-function loadShow() {
-  let stt = 0; // Variable de compteur pour contrôler les transformations et les effets.
-
-  // Définition des propriétés visuelles de l'élément actif.
-  items[active].style.transform = `none`;
-  items[active].style.zIndex = 1;
-  items[active].style.filter = "none";
-  items[active].style.opacity = 1;
-
-  // Boucle à travers les éléments après l'élément actif, en appliquant les transformations et les effets.
-  for (var i = active + 1; i < items.length; i++) {
-    stt++;
-    items[i].style.transform = `translateX(${120 * stt}px) scale(${
-      1 - 0.2 * stt
-    }) perspective(16px) rotateY(-1deg)`;
-    items[i].style.zIndex = -stt;
-    items[i].style.filter = "blur(5px)";
-    items[i].style.opacity = stt > 2 ? 0 : 0.6;
+  function mobileShow() {
+    items.forEach((item, index) => {
+      item.style.display = index === active ? 'block' : 'none';  // Only the active item is shown
+    });
   }
 
-  stt = 0; // Réinitialisation du compteur pour la prochaine boucle.
+  function loadShow() {
+    if (isMobile) {
+      mobileShow();
+      return;
+    }
 
-  // Boucle à travers les éléments avant l'élément actif, en appliquant les transformations et les effets.
-  for (var i = active - 1; i >= 0; i--) {
-    stt++;
-    items[i].style.transform = `translateX(${-120 * stt}px) scale(${
-      1 - 0.2 * stt
-    }) perspective(16px) rotateY(1deg)`;
-    items[i].style.zIndex = -stt;
-    items[i].style.filter = "blur(5px)";
-    items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    let stt = 0;
+    items[active].style.transform = 'none';
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+
+    for (let i = active + 1; i < items.length; i++) {
+      stt++;
+      items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt})`;
+      items[i].style.zIndex = -stt;
+      items[i].style.filter = 'blur(5px)';
+      items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+
+    stt = 0;
+
+    for (let i = active - 1; i >= 0; i--) {
+      stt++;
+      items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt})`;
+      items[i].style.zIndex = -stt;
+      items[i].style.filter = 'blur(5px)';
+      items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
   }
-}
 
-// Appel de la fonction loadShow pour définir l'état visuel initial des éléments du portfolio.
-loadShow();
+  // Set up event listeners for navigation buttons
+  next.onclick = function () {
+    active = (active + 1) % items.length;
+    isMobile ? mobileShow() : loadShow();
+  };
 
-// Gestionnaire d'événements pour le clic sur le bouton "suivant".
-next.onclick = function () {
-  // Incrément de l'index actif. S'il dépasse le dernier élément, revenir au premier élément.
-  active = active + 1 < items.length ? active + 1 : (active = 0);
-  // Mise à jour de l'état visuel des éléments du portfolio.
+  prev.onclick = function () {
+    active = (active - 1 + items.length) % items.length;
+    isMobile ? mobileShow() : loadShow();
+  };
+
+  // Initial load
   loadShow();
-};
 
-// Gestionnaire d'événements pour le clic sur le bouton "précédent".
-prev.onclick = function () {
-  // Décrément de l'index actif. S'il devient inférieur au premier élément, revenir au dernier élément.
-  active = active - 1 >= 0 ? active - 1 : (active = items.length - 1);
-  // Mise à jour de l'état visuel des éléments du portfolio.
-  loadShow();
-};
+  // Optionally add a listener to handle window resize
+  window.addEventListener('resize', function() {
+    isMobile = window.innerWidth <= 768;
+    loadShow();  // Recalculate display on resize
+  });
 });
+
 
 /***************************************************************************************
 ******************************  CONTACT: TOGGLES SELECT ********************************
