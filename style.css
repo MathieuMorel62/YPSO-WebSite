@@ -1615,13 +1615,10 @@ nav ul li a {
 }
 
 .portfolio-direction_arrows:hover {
-  color: var(--color-third);
-  background-color: var(--color-primary);
-  width: 62px;
-  height: 62px;
-  font-size: 2.1rem;
-  border: 1px solid var(--color-third);
+  color: lightcoral;
+  cursor: pointer;
 }
+
 
 #portfolio-next, #portfolio-prev {
   position: absolute;
@@ -1661,14 +1658,18 @@ nav ul li a {
   #portfolio .portfolio-title {
     transform: none;
     font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
   }
 
   #portfolio .portfolio-subtitle {
     width: 100%;
     transform: none;
     font-size: 1rem;
-    line-height: 2rem;
+    line-height: 1.7rem;
     box-sizing: border-box;
+    padding: 0 20px;
   }
 
   #portfolio .portfolio-subtitle p {
@@ -1676,42 +1677,26 @@ nav ul li a {
   }
 
   .portfolio-slider .portfolio-item {
-    width: 150px;
-    height: 150px;
-    left: calc(130% - 370px);
-    margin-top: 50px;
+    width: 90%;
+    height: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
   }
 
   button#portfolio-prev {
     left: 10%;
-    top: 50%;
+    top: 85%;
   }
   button#portfolio-next {
     right: 10%;
-    top: 50%;
+    top: 85%;
   }
-  .portfolio-item-text {
-    display: none;
-  }
-  .portfolio-slider .portfolio-item {
-    width: 200px;
-    height: 200px;
-    left: calc(80% - 230px);
-    margin-top: 10px;
-  }
+
   .scroll-arrow-portfolio {
     display: none;
   }
 }
-/* Mobile
-@media (max-width: 400px) {
-  .portfolio-slider .portfolio-item {
-    width: 150px;
-    height: 150px;
-    left: calc(130% - 370px);
-    margin-top: 50px;
-  }
-}*/
 
 /***************************************************************************************
 ***********************************  CONTACT SECTION  **********************************
