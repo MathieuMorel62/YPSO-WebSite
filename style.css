@@ -1519,7 +1519,10 @@ nav ul li a {
 }
 
 .portfolio-item1 {
-  background-image: url(./Assets/portfolio_pictures/web-design.jpg);
+  background-image: url(./Assets/portfolio_pictures/coming_soon.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .portfolio-item2 {
@@ -1527,7 +1530,10 @@ nav ul li a {
 }
 
 .portfolio-item3 {
-  background-image: url(./Assets/portfolio_pictures/background-dashboard.jpg);
+  background-image: url(./Assets/portfolio_pictures/coming_soon.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .portfolio-item:hover {
