@@ -598,7 +598,7 @@
         <h2>Parlons-en !</h2>
 
         <!-- Form that sends an email with contact details -->
-        <form name="contact" method="POST" data-netlify="true" onsubmit="return validateForm();">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" onsubmit="return validateForm();">
 
           <!-- Champ caché pour le choix de l'utilisateur et anti-spam honeypot -->
           <input type="hidden" name="bot-field" />
@@ -627,6 +627,9 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
           </div>
+
+          <!-- Field for the recaptcha -->
+            <div data-netlify-recaptcha="true"></div>
 
           <!-- Button to submit the form -->
           <div class="submit-container">
