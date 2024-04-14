@@ -1913,12 +1913,15 @@ nav ul li a {
     resize: vertical;
     margin-bottom: 20px;
   }
+  .captcha-container {
+    margin-top: -90px;
+  }
   .submit-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 30px;
   }
   .submit-container button {
     width: 30%;
