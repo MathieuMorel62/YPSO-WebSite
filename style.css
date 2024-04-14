@@ -1709,7 +1709,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   padding: 0 5%;
-  background: var(--color-linear-gradiant-blue)
+  background: var(--color-linear-gradiant-blue);
 }
 
 /* Content Wrapper */
@@ -1822,7 +1822,7 @@ nav ul li a {
 
 /* Submit Button Styles */
 .submit-container {
-  text-align: right;
+  margin-left: 28%;
 }
 
 #contact button[type="submit"] {
@@ -1834,7 +1834,7 @@ nav ul li a {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.2em;
-  margin-top: 20px;
+  margin-top: -50px;
   transition: background-color 0.3s;
 }
 
