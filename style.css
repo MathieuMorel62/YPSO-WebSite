@@ -1819,10 +1819,14 @@ nav ul li a {
   height: 200px;
   resize: vertical;
 }
-
+.captcha-container {
+  width: 100%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
 /* Submit Button Styles */
 .submit-container {
-  margin-left: 28%;
+  text-align: right;
 }
 
 #contact button[type="submit"] {
