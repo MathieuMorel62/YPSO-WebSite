@@ -598,7 +598,12 @@
         <h2>Parlons-en !</h2>
 
         <!-- Form that sends an email with contact details -->
-        <form method="POST" action="mailto:mormth@aol.com">
+        <form name="contact" method="POST" data-netlify="true" onsubmit="return validateForm();">
+
+          <!-- Champ caché pour le choix de l'utilisateur et anti-spam honeypot -->
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" id="userChoice" name="userChoice" />
+
           <!-- Field for the first name -->
           <div class="input-group">
             <label for="prenom">Prénom</label>

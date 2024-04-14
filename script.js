@@ -199,27 +199,36 @@ document.addEventListener("DOMContentLoaded", function () {
 ***************************************************************************************/
 
 function toggleButton(buttonId) {
-// Désactiver tous les boutons
-const buttons = document.querySelectorAll(".button-container .button");
-buttons.forEach((button) => {
-  button.classList.remove("active");
+    // Désactiver tous les boutons
+    const buttons = document.querySelectorAll(".button-container .button");
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+    });
+
+    // Activer le bouton cliqué
+    const clickedButton = document.getElementById(buttonId);
+    clickedButton.classList.add("active");
+
+    // Mettre à jour le champ caché avec la valeur du bouton cliqué
+    const hiddenInput = document.getElementById("userChoice");
+    hiddenInput.value = clickedButton.innerText;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        if (!validateForm()) {
+            event.preventDefault();  // Empêcher la soumission du formulaire
+        }
+    });
 });
 
-// Activer le bouton cliqué
-const clickedButton = document.getElementById(buttonId);
-clickedButton.classList.add("active");
-
-// Mettre à jour le champ caché avec la valeur du bouton cliqué
-const hiddenInput = document.getElementById("userChoice");
-hiddenInput.value = clickedButton.innerText;
-}
-
-// Validation du formulaire
 function validateForm() {
-const userChoice = document.getElementById("userChoice").value;
-if (!userChoice) {
-    alert('Veuillez sélectionner le projet a développer avant de soumettre le formulaire.');
-    return false;
+    const userChoice = document.getElementById("userChoice").value;
+    if (!userChoice) {
+        alert('Veuillez sélectionner le projet à développer avant de soumettre le formulaire.');
+        return false;
+    }
+    return true;
 }
-return true;
-}
+
