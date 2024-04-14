@@ -21,6 +21,19 @@
   --font-primary: 'Lexend', sans-serif;
   --font-secondary: 'Quicksand', serif;
 
+  /* Title And Subtitle Sizes */
+  --title-size-desktop: 5rem;
+  --title-size-tablet: 2.5rem;
+  --title-size-mobile: 2rem;
+
+  --sub-title-size-desktop: 2vw;
+  --sub-title-size-tablet: 2rem;
+  --sub-title-size-mobile: 1.5rem;
+
+  --paragraph-size-desktop: 2rem;
+  --paragraph-size-tablet: 1.5rem;
+  --paragraph-size-mobile: 1rem;
+
   /* Colors */
   --color-primary: #132e8a;
   --color-secondary: #333333;
@@ -473,7 +486,7 @@ nav ul li a {
 .typing-effect-2 {
   font-family: var(--font-secondary);
   color: var(--color-primary);
-  font-size: 2vw; /* 2vw */
+  font-size: var(--sub-title-size-desktop);
 }
 
 .right-column p {
@@ -543,10 +556,10 @@ nav ul li a {
   }
   .column .typing-effect span {
     margin: 0.1rem;
-    font-size: 2rem;
+    font-size: var(--title-size-mobile);
   }
   .column .typing-effect-2 {
-    font-size: 1.5rem;
+    font-size: var(--sub-title-size-mobile);
     display: flex;
     justify-content: center;
   }
@@ -590,10 +603,10 @@ nav ul li a {
   }
   .column .typing-effect span {
     margin: 0.31rem;
-    font-size: 2.5rem;
+    font-size: var(--title-size-tablet);
   }
   .column .typing-effect-2 {
-    font-size: 1.5rem;
+    font-size: var(--sub-title-size-tablet);
     display: flex;
     justify-content: center;
   }
@@ -630,7 +643,7 @@ nav ul li a {
 .section_title h2 {
   font-family: var(--font-secondary);
   color: var(--color-third);
-  font-size: 5rem;
+  font-size: var(--title-size-desktop);
   font-weight: 700;
   margin-bottom: 0.25rem;
   margin-top: 1.25rem;
@@ -667,7 +680,7 @@ nav ul li a {
 .section_title p {
   color: var(--color-third);
   font-family: var(--font-secondary);
-  font-size: 1.9em;
+  font-size: var(--paragraph-size-desktop);
   line-height: 1.3em;
   padding: 0.3rem 15%;
   text-align: justify;
@@ -768,7 +781,7 @@ nav ul li a {
 
 @media (max-width: 768px) {
   .section_title h2.text-titles {
-    font-size: 2rem;
+    font-size: var(--title-size-mobile);
     margin-top: 2.5rem;
   }
   .logo-service {
@@ -776,7 +789,7 @@ nav ul li a {
     height: 4.5rem;
   }
   .section_title p {
-    font-size: 1rem;
+    font-size: var(--paragraph-size-mobile);
     margin: 1.8rem 0.8rem;
     padding: 0;
   }
@@ -811,7 +824,7 @@ nav ul li a {
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .section_title h2.text-titles {
-    font-size: 2.5rem;
+    font-size: var(--title-size-tablet);
     margin-top: 2.5rem;
   }
   .logo-service {
@@ -819,7 +832,7 @@ nav ul li a {
     height: 8.5rem;
   }
   .section_title p {
-    font-size: 1.5rem;
+    font-size: var(--paragraph-size-tablet);
     margin: 0.31rem 1.56rem;
     padding: 0;
   }
@@ -867,7 +880,7 @@ nav ul li a {
   font-family: var(--font-secondary);
   color: var(--color-primary);
   text-align: center;
-  font-size: 4rem;
+  font-size: var(--title-size-desktop);
   font-weight: 700;
   margin-top: 3.1rem;
 }
@@ -876,8 +889,9 @@ nav ul li a {
   text-align: center;
   z-index: 2;
   margin-top: 3.1rem;
-  font-size: 4rem;
+  font-size: var(--sub-title-size-desktop);
   color: var(--color-primary);
+  font-weight: 300;
 }
 
 /* Background Logo */
@@ -1071,10 +1085,10 @@ nav ul li a {
   }
   h2.team-title {
     margin-top: 10px;
-    font-size: 2rem;
+    font-size: var(--title-size-mobile);
   }
   h3.team-title2 {
-    font-size: 1.5rem;
+    font-size: var(--sub-title-size-mobile);
     margin-top: 20px;
   }
   .bubble-container {
@@ -1125,10 +1139,10 @@ nav ul li a {
   }
   h2.team-title {
     margin-top: 30px;
-    font-size: 2.5rem;
+    font-size: var(--title-size-tablet);
   }
   h3.team-title2 {
-    font-size: 2rem;
+    font-size: var(--sub-title-size-tablet);
     margin-top: 20px;
     margin-bottom: 10px;
   }
@@ -1188,28 +1202,30 @@ nav ul li a {
 /* Partenaire Titles */
 #partenaire h2, #partenaire h3 {
   position: relative;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
   margin-bottom: 50px;
 }
 
 #partenaire h2 {
   font-family: var(--font-secondary);
-  font-size: 5.6vw;
+  font-weight: 700;
+  font-size: var(--title-size-desktop);
   color: var(--color-third);
 }
 
 #partenaire h3 {
-  font-size: 40px;
+  font-size: var(--sub-title-size-desktop);
   z-index: 2;
   margin-bottom: 100px;
   color: var(--color-third);
+  font-weight: 200;
 }
 
 /* Partenaire Title Line */
 #partenaire h2:before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   width: 250px;
@@ -1292,7 +1308,7 @@ nav ul li a {
 .quote {
   font-family: var(--font-secondary);
   color: var(--color-third);
-  font-size: 33px;
+  font-size: var(--paragraph-size-desktop);
   max-width: 1000px;
   margin: 0 auto 0;
   line-height: 1.6;
@@ -1346,12 +1362,12 @@ nav ul li a {
 /* ----------Responsive Parternaire titles----- */
 @media (max-width: 768px) {
   #partenaire h2 {
-    font-size: 2rem;
+    font-size: var(--title-size-mobile);
     margin-top: 1.9rem;
     margin-bottom: 60px;
   }
   #partenaire h3 {
-    font-size: 1.5rem;
+    font-size: var(--sub-title-size-mobile);
     margin-bottom: 10px;
   }
   .item-partner {
@@ -1385,12 +1401,12 @@ nav ul li a {
 }
 @media only screen and (min-width: 769px) and (max-width: 1023px){
   #partenaire h2 {
-    font-size: 2.5rem;
+    font-size: var(--title-size-tablet);
     margin-top: 1.9rem;
     margin-bottom: 70px;
   }
   #partenaire h3 {
-    font-size: 2rem;
+    font-size: var(--sub-title-size-tablet);
     margin-bottom: 10px;
   }
   .item-partner {
@@ -1438,17 +1454,17 @@ nav ul li a {
   overflow: hidden;
 }
 
-
-
 /* Title and Subtitle */
 .portfolio-title {
-  transform: translate(-50%);
   padding: 10px;
-  font-size: 80px;
+  font-size: var(--title-size-desktop);
   font-family: var(--font-secondary);
+  font-weight: 700;
   color: var(--color-primary);
-  margin-right: 15%;
+  text-align: center;
+  margin: 0 auto;
   margin-bottom: 30px;
+  letter-spacing: 7px;
 }
 
 .portfolio-subtitle {
@@ -1456,9 +1472,10 @@ nav ul li a {
   padding: 10px;
   text-align: justify;
   color: var(--color-primary);
-  transform: translate(100px);
-  font-size: 1.6em;
+  font-size: var(--paragraph-size-desktop);
   font-family: var(--font-secondary);
+  line-height: 1.6;
+  font-weight: 200;
 }
 
 /* Main Container of the Portfolio */
@@ -1661,7 +1678,7 @@ nav ul li a {
 @media (max-width: 768px){
   #portfolio .portfolio-title {
     transform: none;
-    font-size: 2rem;
+    font-size: var(--title-size-mobile);
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -1670,7 +1687,7 @@ nav ul li a {
   #portfolio .portfolio-subtitle {
     width: 100%;
     transform: none;
-    font-size: 1rem;
+    font-size: var(--paragraph-size-mobile);
     line-height: 1.7rem;
     box-sizing: border-box;
     padding: 0 20px;
@@ -1730,7 +1747,7 @@ nav ul li a {
 @media only screen and (min-width: 769px) and (max-width: 1023px) {
   #portfolio .portfolio-title {
     transform: none;
-    font-size: 2.5rem;
+    font-size: var(--title-size-tablet);
     text-align: center;
     width: 100%;
     margin: 20px auto;
@@ -1738,13 +1755,14 @@ nav ul li a {
   #portfolio .portfolio-subtitle {
     width: 90%;
     transform: none;
-    font-size: 1.5rem;
+    font-size: var(--paragraph-size-tablet);
     font-weight: 200;
     line-height: 1.7rem;
     padding: 0 20px;
   }
   #portfolio .portfolio-subtitle p {
     margin-top: 10px;
+    line-height: 1.5;
   }
   .portfolio-item {
     width: 400px;
@@ -1823,7 +1841,7 @@ nav ul li a {
 .left-content h1 {
   font-family: var(--font-secondary);
   color: var(--color-third);
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 600;
   max-width: 90%;
   margin-bottom: 50px;
@@ -1849,7 +1867,7 @@ nav ul li a {
   cursor: pointer;
   transition: all 0.3s;
   font-size: 1.5em;
-  width: 242px;
+  width: 280px;
 }
 
 .button-container .button.active,
@@ -1956,7 +1974,7 @@ nav ul li a {
   .button-container .button {
     padding: 10px 20px;
     font-size: 1rem;
-    width: 150px;
+    width: 175px;
     white-space: nowrap;
     box-shadow: 1px 1px 4px var(--color-primary);
   }
