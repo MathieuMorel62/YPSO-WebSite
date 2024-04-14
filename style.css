@@ -1544,8 +1544,12 @@ nav ul li a {
 }
 
 .portfolio-item:hover .portfolio-item-title {
-  right: 200px;
+  right: 0;
+  left: 0;
+  margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-item-title h3 {
@@ -1653,7 +1657,7 @@ nav ul li a {
 }
 
 /* ----------Responsive Portfolio titles----- */
-/* Mobile */
+
 @media (max-width: 768px){
   #portfolio .portfolio-title {
     transform: none;
@@ -1688,6 +1692,7 @@ nav ul li a {
     left: 10%;
     top: 85%;
   }
+
   button#portfolio-next {
     right: 10%;
     top: 85%;
@@ -1695,6 +1700,80 @@ nav ul li a {
 
   .scroll-arrow-portfolio {
     display: none;
+  }
+
+  .portfolio-item-title h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-item-text {
+    margin-top: 80px;
+    width: 75%;
+    font-size: 13px;
+  }
+
+  .portfolio-item-text p strong {
+    font-size: 15px;
+  }
+
+  .portfolio-item-text p {
+    padding: 5px;
+  }
+
+  .portfolio-item a {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  #portfolio .portfolio-title {
+    transform: none;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+  }
+  #portfolio .portfolio-subtitle {
+    width: 90%;
+    transform: none;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    padding: 0 20px;
+  }
+  #portfolio .portfolio-subtitle p {
+    margin-top: 10px;
+  }
+  .portfolio-item {
+    width: 400px;
+    height: 400px;
+    margin: 100px auto;
+    left: 0;
+    right: 0;
+  }
+  .portfolio-item-title h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-item-text {
+    margin-top: 80px;
+    width: 75%;
+    font-size: 13px;
+  }
+
+  .portfolio-item-text p strong {
+    font-size: 15px;
+  }
+
+  .portfolio-item-text p {
+    padding: 5px;
+  }
+
+  .portfolio-item a {
+    margin-top: 10px;
+    font-size: 12px;
   }
 }
 
