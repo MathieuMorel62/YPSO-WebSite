@@ -1463,7 +1463,7 @@ nav ul li a {
   color: var(--color-primary);
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   letter-spacing: 7px;
 }
 
@@ -1487,7 +1487,7 @@ nav ul li a {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  margin-top: -20px;
+  margin-top: -55px;
 }
 
 /* Portfolio Slider */
