@@ -1090,7 +1090,7 @@ nav ul li a {
     top: 61%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
+    width: 300px;
     height: 400px;
   }
   .card .img-team {
@@ -1738,7 +1738,8 @@ nav ul li a {
   #portfolio .portfolio-subtitle {
     width: 90%;
     transform: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 200;
     line-height: 1.7rem;
     padding: 0 20px;
   }
@@ -1748,7 +1749,7 @@ nav ul li a {
   .portfolio-item {
     width: 400px;
     height: 400px;
-    margin: 100px auto;
+    margin: 50px auto;
     left: 0;
     right: 0;
   }
@@ -1774,6 +1775,9 @@ nav ul li a {
   .portfolio-item a {
     margin-top: 10px;
     font-size: 12px;
+  }
+  .scroll-arrow-portfolio {
+    bottom: 4.5rem;
   }
 }
 
