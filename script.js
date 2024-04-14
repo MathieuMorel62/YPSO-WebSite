@@ -2,7 +2,7 @@
  ***********************************  SECTION: SCROLL  **********************************
  ***************************************************************************************/
 
- function detectScroll(event) {
+function detectScroll(event) {
   console.log(event.deltaY);
 if (event.deltaY > 0) {
   let currentSection = getCurrentSection();
@@ -39,6 +39,7 @@ window.addEventListener("wheel", detectScroll);
 ***************************************************************************************/
 
 function toggleButton(buttonId) {
+// Deselect all buttons
 var button = document.getElementById(buttonId);
 if (button.classList.contains("button-on")) {
   button.classList.remove("button-on");
@@ -47,10 +48,12 @@ if (button.classList.contains("button-on")) {
 }
 }
 
+// Add an event listener to the document
 document.addEventListener("DOMContentLoaded", function () {
 const menuIcon = document.getElementById("menu-icon-link");
 const menu = document.querySelector(".menu");
 
+// Add an event listener to the menu icon
 menuIcon.addEventListener("click", function () {
   event.preventDefault();
   menu.classList.toggle("show");
@@ -63,19 +66,18 @@ menuIcon.addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-// Récupération des éléments nécessaires du DOM
+// Get the necessary elements from the DOM
 const bubbles = document.querySelectorAll(".bubble");
 const mainCard = document.getElementById("mainCard");
 const closeButton = document.querySelector(".close-btn");
 
-// Calcul des limites maximales pour le placement des bulles
+// Get the maximum X and Y values for the bubbles
 const maxX = document.querySelector(".bubble-container").clientWidth - bubbles[0].offsetWidth;
 const maxY = document.querySelector(".bubble-container").clientHeight - bubbles[0].offsetHeight;
 const margin = 10;
 let lastClickedBubble = null;
 
-
-// Fonction pour positionner une bulle de manière linéaire
+// Add an event listener to the document
 function positionBubble(bubble, index) {
     const numBubblesPerRow = Math.floor(maxX / (bubble.offsetWidth));
     const row = Math.floor(index / numBubblesPerRow);
@@ -84,13 +86,13 @@ function positionBubble(bubble, index) {
     const x = col * (bubble.offsetWidth + margin);
     const y = row * (bubble.offsetHeight + margin);
 
-    // Applique la position calculée à la bulle
+    // Set the initial position of the bubble
     bubble.style.transform = `translate(${x}px, ${y}px)`;
     bubble.dataset.x = x;
     bubble.dataset.y = y;
 }
 
-// Positionne chaque bulle et écoute l'événement de clic
+// Position the bubbles
 bubbles.forEach((bubble, index) => {
     positionBubble(bubble, index);
     bubble.addEventListener("click", function () {
@@ -98,7 +100,7 @@ bubbles.forEach((bubble, index) => {
             lastClickedBubble.style.opacity = 1;
         }
 
-        // Mise à jour de la carte principale avec les données de la bulle cliquée
+        // Set the content of the main card
         const attributes = this.dataset;
         mainCard.querySelector(".img-team").style.backgroundImage = `url(${attributes.image})`;
         mainCard.querySelector("h2").textContent = attributes.name;
@@ -113,13 +115,13 @@ bubbles.forEach((bubble, index) => {
     });
 });
 
-// Écoute l'événement de clic sur le bouton de fermeture
+// Add an event listener to the close button
 closeButton.addEventListener("click", function () {
     mainCard.style.display = "none";
     if (lastClickedBubble) {
         lastClickedBubble.style.opacity = 1;
     }
-});
+  });
 });
 
 
@@ -128,16 +130,19 @@ closeButton.addEventListener("click", function () {
 ******************************  PORTFOLIO: SLIDER ********************************
 ***************************************************************************************/
 
+// Add an event listener to the document
 document.addEventListener("DOMContentLoaded", function () {
+  // Get the necessary elements from the DOM
   let items = document.querySelectorAll(".portfolio-slider .portfolio-item");
   let next = document.getElementById("portfolio-next");
   let prev = document.getElementById("portfolio-prev");
   let active = items.length % 2 !== 0 ? (items.length - 1) / 2 : items.length / 2;
   let isMobile = window.innerWidth <= 768;
 
+  // Function to show the active item
   function mobileShow() {
     items.forEach((item, index) => {
-      item.style.display = index === active ? 'block' : 'none';  // Only the active item is shown
+      item.style.display = index === active ? 'block' : 'none';
     });
   }
 
@@ -147,12 +152,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Show the active item and adjust the position of the other items
     let stt = 0;
     items[active].style.transform = 'none';
     items[active].style.zIndex = 1;
     items[active].style.filter = 'none';
     items[active].style.opacity = 1;
 
+    // Set the position of the items to the right and left of the active item
     for (let i = active + 1; i < items.length; i++) {
       stt++;
       items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt})`;
@@ -162,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     stt = 0;
-
+    // Set the position of the items to the left of the active item
     for (let i = active - 1; i >= 0; i--) {
       stt++;
       items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt})`;
@@ -183,13 +190,13 @@ document.addEventListener("DOMContentLoaded", function () {
     isMobile ? mobileShow() : loadShow();
   };
 
-  // Initial load
+  // Show the active item
   loadShow();
 
-  // Optionally add a listener to handle window resize
+  // Add an event listener to the window
   window.addEventListener('resize', function() {
     isMobile = window.innerWidth <= 768;
-    loadShow();  // Recalculate display on resize
+    loadShow();
   });
 });
 
@@ -199,36 +206,71 @@ document.addEventListener("DOMContentLoaded", function () {
 ***************************************************************************************/
 
 function toggleButton(buttonId) {
-    // Désactiver tous les boutons
-    const buttons = document.querySelectorAll(".button-container .button");
-    buttons.forEach((button) => {
-        button.classList.remove("active");
-    });
+  // Deselect all buttons
+  const buttons = document.querySelectorAll(".button-container .button");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
 
-    // Activer le bouton cliqué
-    const clickedButton = document.getElementById(buttonId);
-    clickedButton.classList.add("active");
+  // Select the clicked button
+  const clickedButton = document.getElementById(buttonId);
+  clickedButton.classList.add("active");
 
-    // Mettre à jour le champ caché avec la valeur du bouton cliqué
-    const hiddenInput = document.getElementById("userChoice");
-    hiddenInput.value = clickedButton.innerText;
+  // Update the hidden input value
+  const hiddenInput = document.getElementById("userChoice");
+  hiddenInput.value = clickedButton.innerText;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        if (!validateForm()) {
-            event.preventDefault();  // Empêcher la soumission du formulaire
-        }
-    });
-});
+let alertShown = false;
 
+// Validate the form before submission
 function validateForm() {
-    const userChoice = document.getElementById("userChoice").value;
-    if (!userChoice) {
-        alert('Veuillez sélectionner le projet à développer avant de soumettre le formulaire.');
-        return false;
+  // Get the user choice and reCAPTCHA response
+  const userChoice = document.getElementById("userChoice").value;
+  const recaptchaResponse = document.querySelector('.g-recaptcha-response').value;
+
+  // Check if the user has selected a project
+  if (!userChoice) {
+    if (!alertShown) {
+      alert('Veuillez sélectionner le projet à développer avant de soumettre le formulaire.');
+      alertShown = true;
     }
-    return true;
+    return false;
+  }
+  
+  // Check if the reCAPTCHA response is empty
+  if (!recaptchaResponse) {
+    let recaptchaError = document.getElementById('recaptcha-error');
+    if (recaptchaError) {
+      recaptchaError.style.display = 'block';
+    }
+    if (!alertShown) {
+      alert('Veuillez compléter le reCAPTCHA avant de soumettre le formulaire.');
+      alertShown = true;
+    }
+    return false;
+  }
+
+  // Reset the alert flag
+  alertShown = false;
+  return true;
 }
 
+// Callback function for reCAPTCHA
+function recaptchaCallback() {
+  let recaptchaError = document.getElementById('recaptcha-error');
+  if (recaptchaError) {
+    recaptchaError.style.display = 'none';
+  }
+  alertShown = false;
+}
+
+// Add an event listener to the form
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(event) {
+    if (!validateForm()) {
+      event.preventDefault();
+    }
+  });
+});
