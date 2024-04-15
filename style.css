@@ -907,14 +907,13 @@ nav ul li a {
 /* Main Card */
 .card {
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden; /* Remove scroll */
   position: absolute;
   top: 59%;
   left: 20%;
   transform: translate(-50%, -50%);
   width: 25%;
   height: 33vw;
-
   padding: 25px 25px 25px 25px;
   background-color: var(--color-third);
   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -967,23 +966,27 @@ nav ul li a {
 
 /* Team Image in Card */
 .card .img-team {
-  width: 45%;
+  width: 40%;
+  padding-bottom: 40%;
   height: 0;
-  padding-bottom: 45%;
   border-radius: 50%;
   background-size: cover;
-  background-position: center -5px;
+  background-position: center 0px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: var(--color-primary) 0px 0px 10px;
 }
 
-/* Social Icons */
 .social-icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: 10%;
-  margin-top: 2.6rem;
+  margin-top: 2rem;
+  margin-bottom: 10px;
 }
 
 .social-icons i {
@@ -1026,7 +1029,7 @@ nav ul li a {
   padding-bottom: 11%;
   border-radius: 50%;
   background-size: cover;
-  background-position: center -0.31rem;
+  background-position: center 0rem;
   animation: none;
   border: 0.06rem solid var(--color-primary);
 }
